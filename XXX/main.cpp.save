@@ -1,0 +1,37 @@
+#include "TXLib.h"
+
+    int main()
+    {
+    txCreateWindow (800, 600);
+
+    HDC  background = txLoadImage ("XXX.bmp");
+    HDC  spaceman = txLoadImage ("XXXX.bmp");
+
+        while(!GetAsyncKeyState (VK_ESCAPE))
+    {
+        txBegin();
+        txSetColor (TX_WHITE);
+        txSetFillColor(TX_BLACK);
+        txBitBlt (txDC(), 0, 0, 800, 600, background);
+        txTransparentBlt (txDC(), 300, 200, 138, 209, spaceman, 0 , 0, TX_BLACK);
+        
+        if(
+        
+        
+        txEnd();        
+        txSleep(10);
+        
+        
+        
+        
+        
+        
+    }
+
+    txDeleteDC (background);
+    txDeleteDC (spaceman);
+
+    txTextCursor (false);
+    return 0;
+    }
+
